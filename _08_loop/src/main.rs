@@ -48,7 +48,6 @@ fn main() {
 
     println!("Exited the outer loop");
 
-
     // loop 有个用途是尝试一个操作直到成功为止，是个表达式，通过 break 返回。
     let mut counter = 0;
 
@@ -107,4 +106,16 @@ fn main() {
         }
     }
 
+    // 没有变化
+    println!("names: {:?}", names);
+
+    // 这是使用 iter_mut() 的方法，可以修改值
+    let mut mutNames = vec!["Bob", "Frank", "Ferris"];
+
+    for name in mutNames.iter_mut() {
+        // *name 解引用并直接修改其值
+        *name = "abc";
+    }
+
+    println!("mutNames: {:?}", mutNames);
 }
