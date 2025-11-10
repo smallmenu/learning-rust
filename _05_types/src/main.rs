@@ -1,6 +1,10 @@
 // type 语句给已有的类型取个新的名字。类型的名字必须遵循驼峰命名法（像是 CamelCase 这样），否则编译器将给出警告。
-// 原生类型是例外，比如： usize、f32，等等。
+// 原生类型命名法可以认为是个例外，比如： usize、f32，等等。
+
+#[allow(dead_code)]
 type NanoSecond = u64;
+
+#[allow(dead_code)]
 type Inch = u64;
 
 fn main() {
@@ -21,6 +25,7 @@ fn main() {
     // 转换为 char
     let character = integer as char;
 
+    // 打印出：ÿ
     println!("{}", character);
 
     // Rust 的类型推断引擎是很聪明的，它不只是在初始化时看看右值（r-value）的类型而已，它还会考察变量之后会怎样使用
@@ -34,9 +39,9 @@ fn main() {
 
     // 在向量中插入 `elem`。
     vec.push(elem);
+
     // 啊哈！现在编译器知道 `vec` 是 u8 的向量了（`Vec<u8>`）。
     // 试一试 ^ 注释掉 `vec.push(elem)` 这一行。
-
     println!("{:?}", vec);
     println!("{:?}", size_of_val(&vec));
 }
