@@ -4,23 +4,23 @@ fn main() {
     let a_boolean = true;
     let unit = ();
 
-    // 变量绑定默认是不可变的（immutable）, 编译期报错
+    // 重要：变量绑定默认是 “不可变的（immutable）”, 修改它会在编译期报错
     // an_integer = 32
 
     // 将 `an_integer` 复制到 `copied_integer`
     let copied_integer = an_integer;
 
-    println!("An integer: {:?}", copied_integer);
-    println!("A boolean: {:?}", a_boolean);
+    println!("An integer: {}", copied_integer);
+    println!("A boolean: {}", a_boolean);
     println!("Meet the unit value: {:?}", unit);
 
-    // 编译器会对未使用的变量绑定产生警告；可以给变量名加上下划线前缀来消除警告。
+    // 编译器会对未使用的变量绑定产生警告；可以给变量名加上下划线前缀来消除警告。我觉得意义不大
     // let unused_variable = 3u32;
 
     // 这样就不会有警告了。
     let _unused_variable = 3u32;
 
-
+    // mut 声明可变的绑定
     let mut mutable_binding = 1;
 
     mutable_binding += 1;
@@ -30,7 +30,7 @@ fn main() {
     // 此绑定生存于 main 函数中
     let long_lived_binding = 1;
 
-    // 这是一个代码块，比 main 函数拥有更小的作用域
+    // 注意：这是一个代码块，比 main 函数拥有更小的作用域
     {
         // 此绑定只存在于本代码块
         let short_lived_binding = 2;
