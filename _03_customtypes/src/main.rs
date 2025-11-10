@@ -27,9 +27,9 @@ struct Rectangle {
     bottom_right: Point,
 }
 
-// 创建一个 `enum`（枚举）来对 web 事件分类。注意变量名和类型共同指定了 `enum`
-// 取值的种类：`PageLoad` 不等于 `PageUnload`，`KeyPress(char)` 不等于
-// `Paste(String)`。各个取值不同，互相独立。
+// 创建一个 `enum`（枚举）来对 web 事件分类。注意变量名和类型共同指定了 `enum` 取值的种类。
+// `PageLoad` 不等于 `PageUnload`，`KeyPress(char)` 不等于 `Paste(String)`。
+// 各个取值不同，互相独立。
 enum WebEvent {
     // 一个 `enum` 可以是单元结构体（称为 `unit-like` 或 `unit`），
     PageLoad,
@@ -73,6 +73,7 @@ enum Status {
 }
 
 // 拥有隐式辨别值（implicit discriminator，从 0 开始）的 enum
+#[allow(dead_code)]
 enum Number {
     Zero,
     One,
