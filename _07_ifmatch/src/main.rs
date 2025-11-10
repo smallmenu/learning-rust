@@ -10,7 +10,7 @@ fn main() {
         print!("{} is zero", n);
     }
 
-    // if-else 条件选择是一个表达式，并且所有分支都必须返回相同的类型
+    // if-else 条件选择可以是一个表达式，但是所有分支都必须返回相同的类型
     let big_n =
         if n < 10 && n > -10 {
             println!(", and is a small number, increase ten-fold");
@@ -23,7 +23,7 @@ fn main() {
             // 这个表达式也必须返回一个 `i32` 类型。
             n / 2
         };
-    //   ^ 不要忘记在这里加上一个分号！所有的 `let` 绑定都需要它。
+    //   ^ 不要忘记在这里加上一个分号！，因为这是个表达式，并且所有的 `let` 绑定都需要它。
 
     println!("{} -> {}", n, big_n);
 
@@ -32,15 +32,18 @@ fn main() {
 
     println!("Tell me about {}", number);
 
-    // 第一个匹配分支会被比对，并且所有可能的值都必须被覆盖。注意最后一个：_ 处理其他情况
+    // 第一个匹配分支会被比对，并且所有可能的值都必须被覆盖。注意最后一个：_ 表示处理其他情况，类似 default
     match number {
         // 匹配单个值
         1 => println!("One!"),
+
         // 匹配多个值
         2 | 3 | 5 | 7 | 11 => println!("This is a prime"),
+
         // 试一试 ^ 将 13 添加到质数列表中
         // 匹配一个闭区间范围
         13..=19 => println!("A teen"),
+
         // 处理其他情况,
         _ => println!("Ain't special"),
         // 试一试 ^ 注释掉这个总括性的分支
