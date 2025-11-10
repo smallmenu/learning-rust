@@ -9,7 +9,7 @@ fn main() {
     println!("Pangram: {}", pangram);
 
     // 逆序迭代单词，这里并没有分配新的字符串
-    println!("Words in reverse");
+    println!("Words in reverse：");
     for word in pangram.split_whitespace().rev() {
         println!("> {}", word);
     }
@@ -28,7 +28,7 @@ fn main() {
         // 在字符串尾部插入一个字符串
         string.push_str(", ");
     }
-    println!("{}", string);
+    println!("string:{}", string);
 
 
     // 堆分配一个字符串
@@ -47,6 +47,8 @@ fn main() {
 
     // 有时会有太多需要转义的字符，或者是直接原样写出会更便利。这时可以使用原始字符串（raw string）。
     let escapes_str = "Escapes don't work here: \x3F \u{211D}";
+
+    // 前面使用 r
     let raw_str = r"Escapes don't work here: \x3F \u{211D}";
     println!("{}", escapes_str);
     println!("{}", raw_str);
