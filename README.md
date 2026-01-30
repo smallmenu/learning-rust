@@ -22,12 +22,11 @@ cargo run --bin my_other_bin
 
 ### 构建
 
-```angular2html
+```
 cargo build 
 
 cargo build --release
 ```
-
 
 
 ## 常见错误
