@@ -20,6 +20,14 @@ cargo run
 cargo run --bin my_other_bin
 ```
 
+### 检查
+
+快速的检查一下代码能否编译通过
+
+```
+cargo check
+```
+
 ### 构建
 
 ```
@@ -28,6 +36,12 @@ cargo build
 cargo build --release
 ```
 
+## VSCODE 插件
+
+CodeLLDB
+rust-analyzer
+Even Better TOML
+Code Runner
 
 ## 常见错误
 
