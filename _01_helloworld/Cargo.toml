@@ -3,4 +3,10 @@ name = "_01_helloworld"
 version = "0.1.0"
 edition = "2024"
 
+[profile.release]
+lto = "thin"
+panic = 'abort'
+strip = true
+codegen-units = 8
+
 [dependencies]
